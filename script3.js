@@ -9,6 +9,15 @@ $(function() {
 
   $('#guess-button').on('click', guess);
 
+  $('#reset-button').on('click', reset);
+
+  function reset() {
+    $('#money').val(STARTING_CASH);
+    $('#guess').val(5);
+    $('#bet').val(5);
+    $('#the-number').val("");
+  };
+
   function guess() {
     if (!checkValidValues()) {
       alert("Invalid!");
@@ -21,7 +30,6 @@ $(function() {
 
     currentMoney = parseInt($('#money').val(), 10);
     $('#money').val(currentMoney + profit);
-
   };
 
   function makeBet(randomNumber) {
@@ -40,7 +48,7 @@ $(function() {
       return 0 - bet;
       break;
     }
-  }
+  };
 
   function checkValidValues() {
     bet = parseInt($('#bet').val(), 10);
@@ -50,7 +58,7 @@ $(function() {
       return true;
     }
     return false;
-  } 
+  };
 
 });
 
