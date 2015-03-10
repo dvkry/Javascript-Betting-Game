@@ -21,7 +21,7 @@ $(function() {
 
     currentMoney = parseInt($('#money').val(), 10);
     $('#money').val(currentMoney + profit);
-    console.log(profit);
+
   };
 
   function makeBet(randomNumber) {
